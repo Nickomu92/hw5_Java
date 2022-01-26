@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "car",
+      "type": "com.nikomu.exercise2.CarBrand",
+      "sourceType": "com.nikomu.exercise2.CarBrand"
+    }
+  ],
+  "properties": [
+    {
+      "name": "car.car-brand-name",
+      "type": "java.lang.String[]",
+      "sourceType": "com.nikomu.exercise2.CarBrand"
+    }
+  ],
+  "hints": []
+}

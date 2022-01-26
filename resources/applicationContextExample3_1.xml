@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:myAppExample3.properties"/>
+
+    <bean id="address1_setters_and_xml"
+          class="com.nikomu.exercise3.Address">
+        <property name="streetName" value="${address1.streetName}"/>
+        <property name="home" value="${address1.home}"/>
+        <property name="room" value="${address1.room}"/>
+    </bean>
+
+    <bean id="address2_constructor_and_xml"
+          class="com.nikomu.exercise3.Address">
+        <constructor-arg name="streetName" value="${address2.streetName}"/>
+        <constructor-arg name="home" value="${address2.home}"/>
+        <constructor-arg name="room" value="${address2.room}"/>
+    </bean>
+
+    <bean id="address3_constructor_and_setters_and_xml"
+          class="com.nikomu.exercise3.Address">
+        <constructor-arg name="streetName" value="${address3.streetName}"/>
+        <property name="home" value="${address3.home}"/>
+        <property name="room" value="${address3.room}"/>
+    </bean>
+
+
+    <bean id="user1_constructor_and_setter_and_xml"
+          class="com.nikomu.exercise3.User">
+        <constructor-arg name="firstName" value="${user1.firstName}"/>
+        <constructor-arg name="lastName" value="${user1.lastName}"/>
+        <property name="address" ref="address3_constructor_and_setters_and_xml"/>
+    </bean>
+
+    <bean id="user2_constructor_and_xml"
+          class="com.nikomu.exercise3.User">
+        <constructor-arg name="firstName" value="${user2.firstName}"/>
+        <constructor-arg name="lastName" value="${user2.lastName}"/>
+        <constructor-arg name="address" ref="address2_constructor_and_xml"/>
+    </bean>
+
+    <bean id="user3_setters_and_xml"
+          class="com.nikomu.exercise3.User">
+        <property name="firstName" value="${user3.firstName}"/>
+        <property name="lastName" value="${user3.lastName}"/>
+        <property name="address" ref="address1_setters_and_xml"/>
+    </bean>
+</beans>
